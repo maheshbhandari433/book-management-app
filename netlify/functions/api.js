@@ -3,7 +3,7 @@ const serverless = require('serverless-http');
 const app = express();
 
 // Import your Express server setup
-const indexREST = require('/indexREST');
+const indexREST = require('../indexREST');
 
 // Use the same route handlers as your Express server
 app.use('/api', indexREST);
