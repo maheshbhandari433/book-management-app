@@ -1,10 +1,9 @@
 const express = require('express');
 const serverless = require('serverless-http');
 const app = express();
-const PORT = process.env.PORT || 4000;
 
 // Import your Express server setup
-const indexREST = require('.../indexREST');
+const indexREST = require('.../indexREST.js');
 
 // Use the same route handlers as your Express server
 app.use('/api', indexREST);
