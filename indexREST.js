@@ -29,6 +29,10 @@ router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'homeSPA.html')); 
 });
 
+router.get('/api', (req, res) => {
+    res.send('Welcome to the Book API!');
+});
+
 // Middleware to serve CSS files with the correct MIME type
  app.use('/styles', express.static(path.join(__dirname, '/styles'), { 
     setHeaders: (res, filePath) => {
@@ -150,12 +154,12 @@ app.delete('/api/books/:bookID', (req, res) => {
     }
 });
 
+// Export the router
+module.exports = router;
+
 
 // Start the server
-const PORT = process.env.PORT || 4000; 
+const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server is listening on http://localhost:${PORT}`);
 });
-
-// Export the router
-module.exports = router;

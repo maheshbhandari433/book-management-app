@@ -9,7 +9,7 @@ node_bundler = "esbuild"
 command = "npm start"
 publish = "/"
 port = 8888
-targetPort = 4000
+targetPort = 3000
 
 
 
