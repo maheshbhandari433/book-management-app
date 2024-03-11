@@ -5,7 +5,8 @@
   "main": "indexREST.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node indexREST.js"
+    "start": "node indexREST.js",
+    "build": "echo 'Build command here'"
   },
   "keywords": [],
   "author": "",
