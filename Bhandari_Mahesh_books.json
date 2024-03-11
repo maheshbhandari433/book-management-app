@@ -1,0 +1,72 @@
+[
+  {
+    "bookID": 6,
+    "name": "NoSql - New Hope",
+    "author": "Jesse River",
+    "topic": "Future SQL",
+    "type": "e-book"
+  },
+  {
+    "bookID": 2,
+    "name": "Rebellion of Sophie Q. Lister",
+    "author": "Emily White",
+    "topic": "History",
+    "type": "print-on-demand"
+  },
+  {
+    "bookID": 3,
+    "name": "Hacking databases",
+    "author": "Isla Shore",
+    "topic": "inventions",
+    "type": "magazine"
+  },
+  {
+    "bookID": 5,
+    "name": "The adventures of Mike the Millipede",
+    "author": "Felix Harris",
+    "topic": "mystery",
+    "type": "softcover"
+  },
+  {
+    "bookID": 4,
+    "name": "Maria and My",
+    "author": "Matt Wilson",
+    "topic": "Computers",
+    "type": "pocketbook"
+  },
+  {
+    "bookID": 7,
+    "name": "SQL-mysteries",
+    "author": "Antony Lee",
+    "topic": "databases",
+    "type": "leaflet"
+  },
+  {
+    "name": "New Book Sample",
+    "author": "John Doe",
+    "topic": "Science Fiction",
+    "type": "hardcover",
+    "bookID": 8
+  },
+  {
+    "name": "Multibranch-Jenkins",
+    "author": "Emily White white",
+    "topic": "asas",
+    "type": "askms",
+    "bookID": 15
+  },
+  {
+    "name": "NoSql - New Hope",
+    "author": "Jesse River",
+    "topic": "Future SQL",
+    "type": "e-book",
+    "bookID": 18
+  },
+  {
+    "name": "Multibranch-Jenkins",
+    "author": "Emily White white",
+    "topic": "asas",
+    "type": "asas",
+    "bookID": 19
+  }
+]

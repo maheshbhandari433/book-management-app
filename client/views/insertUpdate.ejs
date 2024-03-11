@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= mode === 'insert' ? 'Insert New Book' : 'Update Book' %></title>
+    <link rel="stylesheet" href="../styles/styleSPA.css">
+</head>
+<body>
+   
+    <h1><%= mode === 'insert' ? 'Insert New Book' : 'Update Book' %></h1>
+
+    <form id="bookForm">
+        <input type="hidden" id="bookId" name="bookId" value="<%= book ? book.bookID : '' %>">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="<%= book ? book.name : '' %>" required>
+        </div>
+        <div class="form-group">
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" value="<%= book ? book.author : '' %>" required>
+        </div>
+        <div class="form-group">
+            <label for="topic">Topic:</label>
+            <input type="text" id="topic" name="topic" value="<%= book ? book.topic : '' %>" required>
+        </div>
+        <div class="form-group">
+            <label for="type">Type:</label>
+            <input type="text" id="type" name="type" value="<%= book ? book.type : '' %>" required>
+        </div>
+        <button type="submit"><%= mode === 'insert' ? 'Add Book' : 'Update Book' %></button>
+    </form>
+   
+        
+</body>
+</html>
