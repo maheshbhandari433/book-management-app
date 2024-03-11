@@ -60,9 +60,10 @@ The project follows this file structure:
   - `views`: EJS template files for rendering views
     - `getAll.ejs`: Template for displaying all books
     - `getOne.ejs`: Template for displaying details of a single book
-    - `homeSPA.ejs`: Main template for the home page
     - `insertUpdate.ejs`: Template for inserting or updating a book
     - `remove.ejs`: Template for removing a book
+
+- `homeSPA.html`: Single page application for the home page
 
 - `indexREST.js`: Entry point for the server with RESTful API endpoints
 
