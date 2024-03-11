@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const router = express.Router();
 
 // Data and DataAccessLayer from previous code
 const { DataAccessLayer } = require('./DataAccess/data_access_layer');
@@ -20,8 +21,11 @@ app.use(express.json());
 // Middleware to serve static files (including HTML, CSS, and JavaScript)
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Mount the router at the desired base path
+app.use('/', router);
+
 // Define the home route
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'homeSPA.html')); 
 });
 
@@ -152,3 +156,6 @@ const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
     console.log(`Server is listening on http://localhost:${PORT}`);
 });
+
+// Export the router
+module.exports = router;
