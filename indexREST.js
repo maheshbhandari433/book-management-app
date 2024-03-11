@@ -17,10 +17,6 @@ app.use(cors());
 // Middleware to parse JSON bodies
 app.use(express.json());
 
-const PORT = process.env.PORT || 4000;
-
-app.get('/api/hello', (req, res) => res.send('Hello World!'));
-
 // Middleware to serve static files (including HTML, CSS, and JavaScript)
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -152,7 +148,7 @@ app.delete('/api/books/:bookID', (req, res) => {
 
 
 // Start the server
-/* const PORT = 4000; */
+const PORT = process.env.PORT || 4000; 
 app.listen(PORT, () => {
     console.log(`Server is listening on http://localhost:${PORT}`);
 });

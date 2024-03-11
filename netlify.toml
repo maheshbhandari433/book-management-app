@@ -1,15 +1,20 @@
+[build]
+command = "npm run build"
+functions = "functions"
+
 [functions]
-  external_node_modules = ["express"]
-  node_bundler = "esbuild"
+node_bundler = "esbuild"
 
-[[redirects]]
-  force = true
-  from = "/api/*"
-  status = 200
-  to = "/.netlify/functions/api/:splat"
+[dev]
+command = "npm start"
+publish = "/"
+port = 8888
+targetPort = 4000
 
-  [build]
-  functions = "functions"
+
+
+
+
 
 
 
