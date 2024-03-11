@@ -20,14 +20,19 @@ app.use(express.json());
 // Middleware to serve static files (including HTML, CSS, and JavaScript)
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Define the home route
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'homeSPA.html')); 
+});
+
 // Middleware to serve CSS files with the correct MIME type
-app.use('/styles', express.static(path.join(__dirname, 'styles'), { 
+ app.use('/styles', express.static(path.join(__dirname, '/styles'), { 
     setHeaders: (res, filePath) => {
         if (path.extname(filePath) === '.css') {
             res.setHeader('Content-Type', 'text/css');
         }
     }
-}));
+}));  
 
 // Middleware to serve JavaScript files with the correct MIME type
 app.use('/client/js', express.static(path.join(__dirname, 'client', 'js'), {
@@ -41,12 +46,8 @@ app.use('/client/js', express.static(path.join(__dirname, 'client', 'js'), {
 // Set the view engine to ejs
 app.set('view engine', 'ejs');
 
-app.set('views', path.join(__dirname, 'client/views')); // Set the views directory
-
-// Define the home route
-app.get('/', (req, res) => {
-    res.render('homeSPA'); 
-}); 
+// Set the views directory
+app.set('views', path.join(__dirname, 'client/views')); 
 
 // Define the books route to serve getAll.ejs
 app.get('/books', (req, res) => {
