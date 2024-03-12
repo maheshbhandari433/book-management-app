@@ -11,7 +11,6 @@ const { DataAccessLayer } = require('./DataAccess/data_access_layer');
 
 // Retrieve the JSON file path from the environment variable
 const jsonFilePath = process.env.JSON_FILE_PATH;
-console.log('JSON file path:', jsonFilePath);
 
 // Create an instance of DataAccessLayer with the JSON file path from the environment variable
 const dataAccessLayer = new DataAccessLayer(jsonFilePath)
