@@ -7,7 +7,7 @@ const router = express.Router();
 const { DataAccessLayer } = require('./DataAccess/data_access_layer');
 
 // Create an instance of DataAccessLayer with original data from file
- const dataAccessLayer = new DataAccessLayer('./Bhandari_Mahesh_books.json'); 
+ const dataAccessLayer = new DataAccessLayer('./bhandari_mahesh_books.json'); 
 
 // Create express app
 const app = express();
