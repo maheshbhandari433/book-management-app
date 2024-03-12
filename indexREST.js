@@ -3,11 +3,18 @@ const cors = require('cors');
 const path = require('path');
 const router = express.Router();
 
+// Load the dotenv module to read environment variables from .env file
+require('dotenv').config();
+
 // Data and DataAccessLayer from previous code
 const { DataAccessLayer } = require('./DataAccess/data_access_layer');
 
-// Create an instance of DataAccessLayer with original data from file
- const dataAccessLayer = new DataAccessLayer('./bhandari_mahesh_books.json'); 
+// Retrieve the JSON file path from the environment variable
+const jsonFilePath = process.env.JSON_FILE_PATH;
+console.log('JSON file path:', jsonFilePath);
+
+// Create an instance of DataAccessLayer with the JSON file path from the environment variable
+const dataAccessLayer = new DataAccessLayer(jsonFilePath)
 
 // Create express app
 const app = express();
