@@ -10,7 +10,7 @@ require('dotenv').config();
 const { DataAccessLayer } = require('./data-access-layer/data_access_layer');
 
 // Retrieve the JSON file path from the environment variable
-const jsonFilePath = process.env.JSON_FILE_PATH;
+const jsonFilePath = path.join(__dirname, 'bhandari_mahesh_books.json')
 
 // Create an instance of DataAccessLayer with the JSON file path from the environment variable
 const dataAccessLayer = new DataAccessLayer(jsonFilePath)
