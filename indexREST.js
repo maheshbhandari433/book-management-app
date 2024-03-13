@@ -6,11 +6,9 @@ const router = express.Router();
 // Load the dotenv module to read environment variables from .env file
 require('dotenv').config();
 
-const dataAccessLayerPath = process.env.DATA_ACCESS_LAYER_PATH ||
-path.join(__dirname, 'data-access-layer', 'data_access_layer.js');
 
 // Data and DataAccessLayer from data_access_layer.js
-const { DataAccessLayer } = require('./data-access-layer/data_access_layer.js');
+const { DataAccessLayer } = require('./data_access_layer/data_access_layer.js');
 
 // Construct the file path using the environment variable or retrieve the JSON file path from the environment variable
 const jsonFilePath = path.join(__dirname, 'bhandari_mahesh_books.json');
