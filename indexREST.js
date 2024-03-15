@@ -7,7 +7,6 @@ const fs = require('fs');
 // Load the dotenv module to read environment variables from .env file
 require('dotenv').config();
 
-
 // Data and DataAccessLayer from data_access_layerjs
 const { DataAccessLayer } = require('./data_access_layer/data_access_layer');
 
@@ -19,7 +18,7 @@ function resolveJsonFilePath() {
        return path.join(__dirname, 'bhandari_mahesh_books.json');
     } else {
         console.log('Production mode');
-        return path.join(__dirname, '..', '..', '..', 'bhandari_mahesh_books.json');
+        return path.join(__dirname, '..', 'bhandari_mahesh_books.json');
     }
 }
 const jsonFilePath = resolveJsonFilePath();
