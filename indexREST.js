@@ -19,7 +19,7 @@ function resolveJsonFilePath() {
        return path.join(__dirname, 'bhandari_mahesh_books.json');
     } else {
         console.log('Production mode');
-        return path.join(__dirname, '..', '..', 'bhandari_mahesh_books.json');
+        return path.join(__dirname, '..', '..', '..', 'bhandari_mahesh_books.json');
     }
 }
 const jsonFilePath = resolveJsonFilePath();
