@@ -11,7 +11,7 @@ require('dotenv').config();
 const { DataAccessLayer } = require('./data_access_layer/data_access_layer');
 
 // Construct the file path using the environment variable or retrieve the JSON file path from the environment variable
-const jsonFilePath = process.env.JSON_FILE_PATH || path.join(__dirname, 'bhandari_mahesh_books.json');
+const jsonFilePath = path.join(__dirname, '/bhandari_mahesh_books.json');
 
 // Create an instance of DataAccessLayer with the JSON file path from the environment variable
 const dataAccessLayer = new DataAccessLayer(jsonFilePath)
@@ -169,4 +169,6 @@ module.exports = router;
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server is listening on http://localhost:${PORT}`);
+    console.log(process.env.NODE_ENV);
 });
+
