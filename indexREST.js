@@ -2,16 +2,27 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const router = express.Router();
+const fs = require('fs');
 
 // Load the dotenv module to read environment variables from .env file
 require('dotenv').config();
 
 
-// Data and DataAccessLayer from data_access_layer.js
+// Data and DataAccessLayer from data_access_layerjs
 const { DataAccessLayer } = require('./data_access_layer/data_access_layer');
 
-// Construct the file path using the environment variable or retrieve the JSON file path from the environment variable
-const jsonFilePath = path.join(__dirname, '/bhandari_mahesh_books.json');
+// Function to resolve the file path dynamically
+function resolveJsonFilePath() {
+    const developmentFilePath = path.join(__dirname, 'dev.txt');
+    if (fs.existsSync(developmentFilePath)) {
+       console.log('Development mode');
+       return path.join(__dirname, 'bhandari_mahesh_books.json');
+    } else {
+        console.log('Production mode');
+        return path.join(__dirname, '..', '..', 'bhandari_mahesh_books.json');
+    }
+}
+const jsonFilePath = resolveJsonFilePath();
 
 // Create an instance of DataAccessLayer with the JSON file path from the environment variable
 const dataAccessLayer = new DataAccessLayer(jsonFilePath)
@@ -169,6 +180,8 @@ module.exports = router;
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`Server is listening on http://localhost:${PORT}`);
-    console.log(process.env.NODE_ENV);
 });
+
+
+
 
